@@ -13,7 +13,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { useNavigate } from "react-router-dom";
+import { useActionData, useNavigate } from "react-router-dom";
 import delhi from "./Images/New_Delhi.jpg";
 import Hyd from "./Images/Hyd.jpg";
 import goa from "./Images/Goa.jpg";
@@ -21,26 +21,38 @@ import chennai from "./Images/chennai.jpg";
 import jaipur from "./Images/jaipur.jpg";
 import axios from "axios";
 import { useState } from "react";
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+
+
 
 const Mainpage = () => {
   const [from, setFrom] = useState("");
   const [to,setTo]=useState("");
   const [date,setDate]=useState('');
-  const Navigate = useNavigate;
-  const [data,setData]=useState([]);
-  const [flight,setFlight]= useState([]);
+  const Navigate = useNavigate();
+  const [email,setEmail]=useState('');
+  const [password,setPassword]=useState('');
+
+  const userdata=JSON.parse(localStorage.getItem("user"))
+  // console.log(userdata.name)
+
+  const handleLogin=()=>{
+    axios.get(`https://localhost:44351/api/Users/${email},${password}`)
+    .then(result=>{
+      localStorage.setItem("user",JSON.stringify(result.data))
+      Navigate('/mainpage')
+    })
+  }
 
   const handleSearch = (from,to,date) => {
-    axios.get(`https://localhost:44351/api/Flights/${from}/${to}/${date}`)
-    .then(result=>{
-        setData(result.data);
-        console.log(result.data)
-        localStorage.setItem("search",JSON.stringify(result.data))
-        setFlight(localStorage.getItem('search'))
-    })
-    console.log(flight)
+    const data={
+      'from':from,'to':to,'date':date
+    }
+    // console.log(data)
+        localStorage.setItem("search",JSON.stringify(data))
+        Navigate('/search')
   };
-
   return (
     <div className="page">
       <div className="header">
@@ -51,8 +63,36 @@ const Mainpage = () => {
           </div>
           <div className="login-container">
             <FontAwesomeIcon icon={faUser} />
+            {userdata ? <div className="account">
+              <button className="account-button">{userdata.name}</button>
+            </div>: <div>
             <button className="Login-button">Register</button>
-            <button className="Login-button">Login</button>
+              <Popup trigger=
+                {<button className="Login-button">Login</button>}
+                modal nested>
+                {
+                    close => (
+                      <div className="main-login-container">
+                      <div className="icons-container">
+                          <b><FontAwesomeIcon icon={faPlaneDeparture}/> AirTicket</b>
+                      </div>
+                      <div className="email-pass">
+                          
+                              <input className="main-e" type="text" placeholder="Email" onChange={e=>setEmail(e.target.value)} />
+                              <input className="main-e" type="password" placeholder="Password" onChange={e=>setPassword(e.target.value)}/>
+                      </div>
+                      <div className="login-but">
+                          <div className="new">
+                              <a href="/register"> Create Account</a>
+                          </div>
+                          <button className="l-button" onClick={()=>handleLogin()}>Login</button>
+                      </div>
+                  </div>
+                    )
+                }
+              </Popup>
+            </div>
+            }
           </div>
         </div>
         <div className="caption">
@@ -63,15 +103,17 @@ const Mainpage = () => {
           <div className="search-items">
             <div className="search-input"> 
               <FontAwesomeIcon icon={faLocationDot} />
-              <input className="From" type="text" placeholder="From" onChange={e=>setFrom(e.target.value)}/>
+              <input className="searchFrom" type="text" placeholder="From" onChange={e=>setFrom(e.target.value)}/>
             </div>
             <div className="search-input">
               <FontAwesomeIcon icon={faLocationDot} />
-              <input type="text" placeholder="To" onChange={e=>setTo(e.target.value)} />
+              <input className="searchFrom" type="text" placeholder="To" onChange={e=>setTo(e.target.value)} />
             </div>
             <div className="search-input">
               <input type="date"
+                className="searchFrom"
                 // showIcon
+                placeholder="Departure Date"
                 dateFormat="yyyy-MM-dd"
                 onChange={e=>setDate(e.target.value)}
                 // selected={date}
@@ -118,25 +160,30 @@ const Mainpage = () => {
         </div>
         <div className="first-row">
           <div className="image-container">
-            <img className="img1" src={delhi} alt="" />
+            <img className="img1" src={delhi} alt="" onClick={()=>
+            window.open("https://www.tripadvisor.in/Attractions-g304551-Activities-New_Delhi_National_Capital_Territory_of_Delhi.html","_blank")}/>
             <h1 className="delhi">New Delhi</h1>
           </div>
           <div className="image-container">
-            <img className="img1" src={Hyd} alt="" />
+            <img className="img1" src={Hyd} alt="" onClick={()=>
+            window.open("https://www.tripadvisor.in/Attractions-g297586-Activities-Hyderabad_Hyderabad_District_Telangana.html","_blank")}/>
             <h1 className="delhi">Hyderabad</h1>
           </div>
         </div>
         <div className="second-row">
           <div className="image-container2">
-            <img className="img2" src={goa} alt="" />
+            <img className="img2" src={goa} alt="" onClick={()=>
+            window.open("https://www.tripadvisor.in/Attractions-g297604-Activities-Goa.html","_blank")}/>
             <h1 className="goa">Goa</h1>
           </div>
           <div className="image-container2">
-            <img className="img2" src={chennai} alt="" />
+            <img className="img2" src={chennai} alt="" onClick={()=>
+            window.open("https://www.tripadvisor.in/Attractions-g304556-Activities-Chennai_Madras_Chennai_District_Tamil_Nadu.html","_blank")}/>
             <h1 className="goa">Chennai</h1>
           </div>
           <div className="image-container2">
-            <img className="img2" src={jaipur} alt="" />
+            <img className="img2" src={jaipur} alt="" onClick={()=>
+            window.open("https://www.tripadvisor.in/Attractions-g304555-Activities-Jaipur_Jaipur_District_Rajasthan.html","_blank")}/>
             <h1 className="goa">Jaipur</h1>
           </div>
         </div>

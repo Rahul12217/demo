@@ -49,6 +49,15 @@
     cursor: pointer;    
 }
 
+.account-button{
+    font-size: 25px;
+    color: white;
+    background-color: #05203c;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;    
+}
+
 .caption
 {
     font-size: 30px;
@@ -251,3 +260,22 @@ input[type=text] {
     left:16px
 }
 
+
+.popup-content {
+    background-color: #0062e3;
+    margin: auto;
+    background: #fff;
+    padding: 5px;
+    border: 1px solid #d7d7d7;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.popup-content {
+    margin: auto;
+    background: #fff;
+    width: fit-content;
+    padding: 5px;
+    border: 1px solid #d7d7d7;
+}
