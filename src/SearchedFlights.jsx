@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import './SearchedFlights.css'
 import axios from 'axios';
-import { faMagnifyingGlass, faMagnifyingGlassMinus, faPlaneDeparture, faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass,  faPlaneDeparture,  faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SearchList from './SearchList';
 import { useNavigate } from 'react-router-dom';
 import Popup from 'reactjs-popup';
+import Dropdown from './Dropdown';
 
 const SearchedFlight = () => {
 
@@ -50,9 +51,17 @@ const SearchedFlight = () => {
                         </div>
                     <div className="sh-buttons">
                         <FontAwesomeIcon icon={faUser} />
-                            {userdata ? <div className="account">
-                    <button className="sh-login">{userdata.name}</button>
-                   </div>:
+                            {userdata ?<div className="account-popup">
+              <Popup className="account-popup" trigger=
+                {<button className="account-button">{userdata.name}</button>}
+                >
+                {
+                    account => (
+                      <Dropdown/>
+                    )
+                }
+              </Popup>
+            </div>:
                     <div>
                         {/* <FontAwesomeIcon icon={faUser} /> */}
                         <button className="sh-login">Register</button>
@@ -90,7 +99,7 @@ const SearchedFlight = () => {
             <div className="header2">
                 <div className="search-icon" onClick={()=>navigate('/mainpage')}><FontAwesomeIcon icon={faMagnifyingGlass}/></div>
                 <p><b>  {from} - {to}</b></p>    
-                <p2>{(date)}</p2>          
+                <p>{(date)}</p>          
             </div>
 
             <div className="results-container">

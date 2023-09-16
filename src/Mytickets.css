@@ -1,0 +1,51 @@
+.mytickets-header{
+    display: flex; 
+    background-color: #05203c;  
+    justify-content: space-between;
+    height: 70px;
+    align-items: center;
+}
+
+.mytickets-logo{
+    margin-left: 185px;
+    display: flex;
+    gap: 10px;
+    color: white;
+}
+
+.mytickets-b{
+    font-size: 22px;
+}
+
+.mytickets-buttons{
+    color: white;
+    /* background-color: aqua; */
+    margin-right: 185px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mytickets-home{
+    background-color: #05203c;
+    color: white;
+    font-size: 22px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.mytickets-home:hover{
+    color: #0062e3;
+}
+
+.tickets{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+
+

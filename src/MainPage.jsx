@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./MainPage.css";
 import {
+  faBars,
   faBed,
   faCab,
   faEarth,
@@ -22,7 +23,10 @@ import jaipur from "./Images/jaipur.jpg";
 import axios from "axios";
 import { useState } from "react";
 import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css';
+import { faLine } from "@fortawesome/free-brands-svg-icons";
+import Dropdown from "./Dropdown";
+import Login from "./Login";
+// import 'reactjs-popup/dist/index.css';
 
 
 
@@ -31,19 +35,9 @@ const Mainpage = () => {
   const [to,setTo]=useState("");
   const [date,setDate]=useState('');
   const Navigate = useNavigate();
-  const [email,setEmail]=useState('');
-  const [password,setPassword]=useState('');
 
   const userdata=JSON.parse(localStorage.getItem("user"))
   // console.log(userdata.name)
-
-  const handleLogin=()=>{
-    axios.get(`https://localhost:44351/api/Users/${email},${password}`)
-    .then(result=>{
-      localStorage.setItem("user",JSON.stringify(result.data))
-      Navigate('/mainpage')
-    })
-  }
 
   const handleSearch = (from,to,date) => {
     const data={
@@ -63,31 +57,26 @@ const Mainpage = () => {
           </div>
           <div className="login-container">
             <FontAwesomeIcon icon={faUser} />
-            {userdata ? <div className="account">
-              <button className="account-button">{userdata.name}</button>
-            </div>: <div>
+            {userdata ? 
+            <div className="account-popup">
+              <Popup className="account-popup" trigger=
+                {<button className="account-button">{userdata.name}</button>}
+                >
+                {
+                    account => (
+                      <Dropdown/>
+                    )
+                }
+              </Popup>
+            </div>: 
+            <div>
             <button className="Login-button">Register</button>
               <Popup trigger=
                 {<button className="Login-button">Login</button>}
                 modal nested>
                 {
                     close => (
-                      <div className="main-login-container">
-                      <div className="icons-container">
-                          <b><FontAwesomeIcon icon={faPlaneDeparture}/> AirTicket</b>
-                      </div>
-                      <div className="email-pass">
-                          
-                              <input className="main-e" type="text" placeholder="Email" onChange={e=>setEmail(e.target.value)} />
-                              <input className="main-e" type="password" placeholder="Password" onChange={e=>setPassword(e.target.value)}/>
-                      </div>
-                      <div className="login-but">
-                          <div className="new">
-                              <a href="/register"> Create Account</a>
-                          </div>
-                          <button className="l-button" onClick={()=>handleLogin()}>Login</button>
-                      </div>
-                  </div>
+                      <Login/>    
                     )
                 }
               </Popup>
@@ -114,7 +103,7 @@ const Mainpage = () => {
                 className="searchFrom"
                 // showIcon
                 placeholder="Departure Date"
-                dateFormat="yyyy-MM-dd"
+                dateformat="yyyy-MM-dd"
                 onChange={e=>setDate(e.target.value)}
                 // selected={date}
                 // onSelect={(d)=>setDate(d)}

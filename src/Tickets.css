@@ -1,0 +1,90 @@
+.list-container{
+    background-color: white;
+    display: flex;
+    height: 70px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 630px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid lightgrey;
+    margin-right: auto;
+    margin-left: auto;
+    box-shadow: 0 1px 3px 0 rgba(37,32,31,.3);
+}
+
+.first-part{
+    /* background-color: red; */
+    /* height: 100%; */
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.first-part b{
+    margin-left: 20px;
+    margin-right: auto;
+}
+
+.second-part{
+    /* background-color: blanchedalmond; */
+    display: flex;
+    width: 100%;
+    max-width: 300px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.first-part .dtime{
+    margin-bottom: 10px;
+    margin-left: 0;
+    font-size: 24px;
+}
+.first-part .place{
+    margin-left: 20px;
+    /* margin-left: 0; */
+    font-size: 16px;
+}
+
+
+
+.third-part{
+    /* background-color: aqua; */
+    width: 140px;
+    border-left: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.third-part button{
+    font-size: 16px;
+    color: white;
+    padding: 5px;
+    width: 80px;
+    border-radius: 10px;
+    background-color: #05203c;
+}
+
+.arrow{
+    /* background-color: aqua; */
+    width: 50px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.airline-date{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}

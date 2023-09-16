@@ -55,7 +55,11 @@
     background-color: #05203c;
     padding: 5px 10px;
     border: none;
-    cursor: pointer;    
+    cursor: pointer;  
+}
+
+.account-button:hover{
+    color:#0062e3;
 }
 
 .caption
@@ -141,7 +145,12 @@ input[type=text] {
     display: flex;
     align-items: center;
     gap: 10px;
+    cursor: pointer;
     font-size: larger;
+}
+
+.search-button:hover{
+    color:black;
 }
 
 .explore{
@@ -262,20 +271,46 @@ input[type=text] {
 
 
 .popup-content {
-    background-color: #0062e3;
+    /* background-color: white; */
     margin: auto;
     background: #fff;
     padding: 5px;
     border: 1px solid #d7d7d7;
     border-radius: 10px;
     display: flex;
+    width: fit-content;
     justify-content: center;
 }
 
-.popup-content {
-    margin: auto;
-    background: #fff;
-    width: fit-content;
-    padding: 5px;
-    border: 1px solid #d7d7d7;
+
+.popup-overlay{
+    background:rgba(0,0,0,.5)
 }
+[data-popup=tooltip].popup-overlay{
+    background:transparent
+}
+.popup-arrow{
+    -webkit-filter:drop-shadow(0 -3px 3px rgba(0,0,0,.16));
+    filter:drop-shadow(0 -3px 3px rgba(0,0,0,.16));
+    color:#fff;
+    stroke-width:2px;
+    stroke:#d7d7d7;
+    stroke-dasharray:30px;
+    stroke-dashoffset:-54px;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0
+}
+
+.account-popup-content {
+    background-color: white;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+}
+
+
