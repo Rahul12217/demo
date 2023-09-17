@@ -69,6 +69,7 @@
     width: 80px;
     border-radius: 10px;
     background-color: #05203c;
+    cursor: pointer;
 }
 
 .arrow{

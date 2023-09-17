@@ -5,6 +5,7 @@ import SearchList from "./SearchList";
 import Login from "./Login";
 import Dropdown from "./Dropdown";
 import Mytickets from "./Mytickets";
+import TicketDetails from "./TicketDetails";
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
       <Route exact path="/login" element={<Login/>}></Route>
       <Route exact path="/drop" element={<Dropdown/>}></Route>
       <Route exact path='/mytickets' element={<Mytickets/>}></Route>
+      <Route exact path='/ticketdetails' element={<TicketDetails/>}></Route>
+
     </Routes>
     </>
   );

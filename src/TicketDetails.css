@@ -1,0 +1,190 @@
+.ticket-details-header{
+    display: flex; 
+    background-color: #05203c;  
+    justify-content: space-between;
+    height: 70px;
+    align-items: center;
+}
+
+.ticket-details-logo{
+    margin-left: 185px;
+    display: flex;
+    gap: 10px;
+    color: white;
+}
+
+.ticket-details-b{
+    font-size: 22px;
+}
+
+.ticket-details-buttons{
+    color: white;
+    /* background-color: aqua; */
+    margin-right: 185px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ticket-details-home{
+    background-color: #05203c;
+    color: white;
+    font-size: 22px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.ticket-details-home:hover{
+    color: #0062e3;
+}
+
+
+
+.details-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1124px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    /* border: 1px solid rgb(159, 159, 159); */
+}
+
+.contact-details{
+    border: 1px solid rgb(159, 159, 159);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.contact-input-fields{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 30px;
+}
+
+.contact-email{
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-email-input{
+    height: 28px;
+    width: 100%;
+    max-width: 350px;
+    padding: 10px 12px;
+    border: 1px solid rgb(159, 159, 159);
+    border-radius: 5px;
+}
+
+.contact-phone{
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-phone-input{
+    height: 28px;
+    width: 100%;
+    max-width: 350px;
+    padding: 10px 12px;
+    border: 1px solid rgb(159, 159, 159);
+    border-radius: 5px;
+}
+
+input[type="text"]{
+    padding: 10px 12px;
+}
+
+
+.name-age{
+    border: 1px solid rgb(159, 159, 159);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.name-age-input{
+    height: 28px;
+    width: 100%;
+    max-width: 350px;
+    padding: 10px 12px;
+    border: 1px solid rgb(159, 159, 159);
+    border-radius: 5px;
+}
+
+select.gender{
+    width: 375px;
+    height: 50px;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: medium;
+
+}
+
+.n-a{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.contact-fare{
+    display: flex;
+    gap: 30px;
+}
+
+.fare-details{
+    /* border: 1px solid rgb(159, 159, 159); */
+    display: flex;  
+    flex-direction: column;
+    padding: 10px;
+    width: 100%;
+    max-width: 350px;
+    justify-content: space-around;
+}
+
+.ab{
+    display: flex;
+    justify-content: space-between;
+}
+
+.fare-tax{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.amount{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main-book{
+    background-color: #05203c;
+    width: 100px;
+    color: white;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.main-book:hover{
+    color: #0062e3;
+}
