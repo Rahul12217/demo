@@ -66,11 +66,18 @@ const TicketDetails = () => {
                     <button className="ticket-details-home">{user.name}</button>
                 </div>
             </div>
+            <div className="who">
+                <h1>{fare.from} to {fare.to}</h1>
+            </div>
+
+            <div className="fly">
+                <h2>Who's flying?</h2>
+            </div>
 
             <div className="details-container">
                 <div className="contact-fare">
                     <div className="contact-details">
-                        <h1>Passenger details</h1>
+                        <h2>Passenger details</h2>
                         <div className="contact-input-fields">
                             <div className="contact-email">
                                 <b><inputLabel>Contact email</inputLabel></b>
@@ -78,12 +85,13 @@ const TicketDetails = () => {
                             </div>
                             <div className="contact-phone">
                                 <b><inputLabel>Phone number</inputLabel></b>
-                                <input type="text" className="contact-phone-input" placeholder="Phone number" onChange={e=>setPhone(e.target.value)}/>
+                                <input type="text" className="contact-phone-input" onChange={e=>setPhone(e.target.value)}/>
                             </div>
                         </div>
                     </div>
 
                     <div className="fare-details">
+                        <h3>Price breakdown :</h3>
                         <div className="ab">
                         <div className="fare-tax">
                             <b>Ticket</b>
@@ -104,12 +112,12 @@ const TicketDetails = () => {
                 <div className="name-age">
                     <div className="n-a">
                         <b><inputLabel>Full Name</inputLabel></b>
-                        <input type="text" className="name-age-input" placeholder="Name" onChange={e=>setName(e.target.value)}/>
+                        <input type="text" className="name-age-input"  onChange={e=>setName(e.target.value)}/>
                     </div>
 
                     <div className="n-a">
                         <b><inputLabel>Age</inputLabel></b>
-                        <input type="text" className="name-age-input" placeholder="Age" onChange={e=>handleAge(e.target.value)}/>
+                        <input type="text" className="name-age-input" onChange={e=>handleAge(e.target.value)}/>
                     </div>
 
                     <div className="n-a">               

@@ -26,6 +26,7 @@ import Popup from 'reactjs-popup';
 import { faLine } from "@fortawesome/free-brands-svg-icons";
 import Dropdown from "./Dropdown";
 import Login from "./Login";
+import Register from "./Register";
 // import 'reactjs-popup/dist/index.css';
 
 
@@ -70,7 +71,15 @@ const Mainpage = () => {
               </Popup>
             </div>: 
             <div>
-            <button className="Login-button">Register</button>
+            <Popup trigger=
+                {<button className="Login-button">Register</button>}
+                modal nested>
+                {
+                    close => (
+                      <Register/>    
+                    )
+                }
+              </Popup>
               <Popup trigger=
                 {<button className="Login-button">Login</button>}
                 modal nested>

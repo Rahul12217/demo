@@ -104,8 +104,9 @@
     background-color: white;
     border: none;
     height: 72px;
-    width: 235px;
+    width: 240px;
     display: flex;
+    padding-left: 10px;
     align-items: center;
     justify-content: space-around;
 }
@@ -125,9 +126,6 @@ input{
     outline: none;
 }
 
-input[type=text] {
-    padding: 0px;
-   }
 
 
 .search-class{

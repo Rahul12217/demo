@@ -7,9 +7,9 @@ const Dropdown = () => {
 
     const Navigate=useNavigate();
 
-    const handleLogin=()=>{
-        Navigate('/mainpage')
+    const handleLogout=()=>{
         localStorage.clear();
+        window.location.reload(true);
     }
 
     return (
@@ -27,7 +27,7 @@ const Dropdown = () => {
 
                 <div className="drop-button">
                     <FontAwesomeIcon icon={faRightFromBracket}/>                
-                    <button className="drop-button" onClick={()=> handleLogin()} >Logout</button>
+                    <button className="drop-button" onClick={()=> handleLogout()} >Logout</button>
                 </div>
 
         </div>

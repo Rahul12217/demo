@@ -49,7 +49,7 @@
     max-width: 1124px;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 20px;
+    margin-top: 5px;
     border-radius: 10px;
     /* border: 1px solid rgb(159, 159, 159); */
 }
@@ -65,8 +65,9 @@
     padding: 20px;
 }
 
+
 .contact-input-fields{
-    margin-top: 30px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -93,7 +94,7 @@
 }
 
 .contact-phone-input{
-    height: 28px;
+    height: 48px;
     width: 100%;
     max-width: 350px;
     padding: 10px 12px;
@@ -101,10 +102,9 @@
     border-radius: 5px;
 }
 
-input[type="text"]{
-    padding: 10px 12px;
+input[type=text] {
+    padding: 0 12px;
 }
-
 
 .name-age{
     border: 1px solid rgb(159, 159, 159);
@@ -119,7 +119,7 @@ input[type="text"]{
 }
 
 .name-age-input{
-    height: 28px;
+    height: 50px;
     width: 100%;
     max-width: 350px;
     padding: 10px 12px;
@@ -172,6 +172,7 @@ select.gender{
     display: flex;
     flex-direction: column;
     gap: 20px;
+    text-align: right;
 }
 
 .main-book{
@@ -187,4 +188,21 @@ select.gender{
 
 .main-book:hover{
     color: #0062e3;
+}
+
+.who{
+    display: flex;
+    max-width: 1124px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.fly{
+    display: flex;
+    max-width: 1124px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
 }

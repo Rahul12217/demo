@@ -20,7 +20,7 @@ const Mytickets = () => {
             setData(result.data.reverse())
         })
         console.log(data) 
-    },[])
+    },[data])
 
     return (  
         <div className="mytickets-container">

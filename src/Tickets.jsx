@@ -1,9 +1,15 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Tickets.css'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
 
 
 const Tickets = ({item}) => {
+
+    const handleCancel=(id)=>{
+        axios.delete(`https://localhost:44351/api/Ticket/${id}`)
+    }
+
     return (  
          <div className="list-container">
             <div className="first-part">
@@ -27,7 +33,7 @@ const Tickets = ({item}) => {
 
             <div className="third-part">
                 <button className="book-button">Download</button>
-                <button className="book-button">Cancel</button>
+                <button className="book-button" onClick={()=>handleCancel(item.ticketId)}>Cancel</button>
             </div>
 
         </div>
