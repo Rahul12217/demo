@@ -1,0 +1,46 @@
+.a-header{
+    display: flex; 
+    background-color: #05203c;  
+    justify-content: space-between;
+    height: 70px;
+    align-items: center;
+}
+
+
+.a-buttons{
+    display: flex;
+    width: 100%;
+    max-width: 1124px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: space-around;
+    /* background-color: aqua; */
+    margin-top: 40px;
+    gap: 20px;
+}
+.ad-buttons{
+    background-color: #05203c;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: larger;
+    width: 360px;
+    height: 72px;
+    border: none;
+    border-radius: 10px;
+}
+
+.a-content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1124px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    gap: 20px;
+    /* border: 1px solid black; */
+}

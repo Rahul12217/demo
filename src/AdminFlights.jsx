@@ -4,19 +4,12 @@ import { faArrowAltCircleDown, faArrowRight } from '@fortawesome/free-solid-svg-
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const SearchList = ({item}) => {
+const AdminFlights = ({item}) => {
 
-    const user = JSON.parse(localStorage.getItem('user'));
+    // const user = JSON.parse(localStorage.getItem('user'));
     const navigate=useNavigate();
     const handleBook=(flight_number)=>{
-        if(user){
-            axios.get(`https://localhost:44351/api/Flights/${flight_number}`)
-            .then(result=>{
-                localStorage.setItem('flight',JSON.stringify(result.data));
-                navigate('/ticketdetails')
-            })
-        }
-        else alert('login to contiue')
+            axios.delete(`https://localhost:44351/api/Flights/${flight_number}`)
     }
 
     return ( 
@@ -40,11 +33,11 @@ const SearchList = ({item}) => {
 
             <div className="third-part">
                 <p className="fare">{item.fare}</p>
-                <button className="book-button" onClick={()=>handleBook(item.flight_number)}>Book</button>
+                <button className="book-button" onClick={()=>handleBook(item.flight_number)}>Cancel</button>
             </div>
 
         </div>
      );
 }
  
-export default SearchList;
+export default AdminFlights;

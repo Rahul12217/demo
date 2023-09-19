@@ -123,9 +123,9 @@ const TicketDetails = () => {
                     <div className="n-a">               
                         <b><inputLabel>Gender</inputLabel></b>
                         <select  className="gender" value={gender} onChange={e=>handleG(e.target.value)}>
-                            <option value="Male">Male</option>
+                            <option value="Gender">Gender</option>
                             <option value="Female">Female</option>
-                            <option value="Rather not say">Rather not say</option>
+                            <option value="Male">Male</option>
                         </select>
                     </div>
                 </div>

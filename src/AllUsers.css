@@ -1,0 +1,32 @@
+.user-card{
+    font-size: large;
+    width: 1000px;
+    /* max-width: 700px; */
+    border: 1px solid rgb(185, 183, 183);
+    display: flex;
+    gap: 10px;
+    border-radius: 5px;
+    align-items: center;
+    padding: 20px;
+    /* justify-content: space-between; */
+}
+
+p1{
+    padding-right: 5px;
+    border-right: 1px solid rgb(143, 141, 141);
+}
+
+p2{
+    padding-right: 5px;
+    border-right: 1px solid rgb(143, 141, 141);
+}
+
+p3{
+    padding-right: 5px;
+    border-right: 1px solid rgb(143, 141, 141);
+}
+
+p4{
+    padding-right: 5px;
+    border-right: 1px solid rgb(143, 141, 141);
+}

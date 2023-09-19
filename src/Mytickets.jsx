@@ -14,13 +14,12 @@ const Mytickets = () => {
     const navigate=useNavigate();
 
     useEffect(()=>{
-        console.log('hi');
         axios.get(`https://localhost:44351/api/Ticket/${user.userId}`)
         .then(result=>{
             setData(result.data.reverse())
         })
         console.log(data) 
-    },[data])
+    },[])
 
     return (  
         <div className="mytickets-container">

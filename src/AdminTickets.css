@@ -1,0 +1,142 @@
+.a-ticket-container{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    border-radius: 10px;
+    width: 100%;
+    max-width: fit-content;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid lightgrey;
+    margin-right: auto;
+    margin-left: auto;
+    box-shadow: 0 1px 3px 0 rgba(37,32,31,.3);
+}
+
+.parts{
+    background-color: white;
+    display: flex;
+    height: 70px;
+    width: 100%;
+    max-width: 630px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid black;
+
+}
+
+.first-part{
+    /* background-color: red; */
+    /* height: 100%; */
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.first-part b{
+    margin-left: 20px;
+    margin-right: auto;
+}
+
+.second-part{
+    /* background-color: blanchedalmond; */
+    display: flex;
+    width: 100%;
+    max-width: 300px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.first-part .dtime{
+    margin-bottom: 10px;
+    margin-left: 0;
+    font-size: 24px;
+}
+.first-part .place{
+    margin-left: 20px;
+    /* margin-left: 0; */
+    font-size: 16px;
+}
+
+
+
+.third-part{
+    /* background-color: aqua; */
+    width: 140px;
+    border-left: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.third-part button{
+    font-size: 16px;
+    color: white;
+    padding: 5px;
+    width: 80px;
+    border-radius: 10px;
+    background-color: #05203c;
+}
+
+.arrow{
+    /* background-color: aqua; */
+    width: 50px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.airline-date{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-tickets-dets{
+    margin-top: 10px;
+}
+
+.t-user-card{
+    margin-top: 10px;
+    font-size: large;
+    width: fit-content;
+    /* max-width: 700px; */
+    border: 1px solid rgb(185, 183, 183);
+    display: flex;
+    gap: 10px;
+    border-radius: 5px;
+    align-items: center;
+    padding: 20px;
+    /* justify-content: space-between; */
+}
+
+p1{
+    padding-right: 5px;
+    border-right: 1px solid rgb(143, 141, 141);
+}
+
+p2{
+    padding-right: 5px;
+    border-right: 1px solid rgb(143, 141, 141);
+}
+
+p3{
+    padding-right: 5px;
+    border-right: 1px solid rgb(143, 141, 141);
+}
+
+p4{
+    padding-right: 5px;
+    border-right: 1px solid rgb(143, 141, 141);
+}
