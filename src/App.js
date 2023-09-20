@@ -8,6 +8,7 @@ import Mytickets from "./Mytickets";
 import TicketDetails from "./TicketDetails";
 import AdminPage from "./AdminPage";
 import AllUsers from "./AllUsers";
+import AddFlight from "./AddFLight";
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
       <Route exact path='/ticketdetails' element={<TicketDetails/>}></Route>
       <Route exact path='/admin' element={<AdminPage/>}></Route>
       <Route exact path='/users' element={<AllUsers/>}></Route>
+      <Route exact path='/add' element={<AddFlight/>}></Route>
     </Routes>
     </>
   );

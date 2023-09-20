@@ -17,9 +17,10 @@ const Register = () => {
     const [name,setName]=useState('');
     const [phone,setPhone]=useState('');
     const [data,setData]=useState([]);
+    const [loading,setLoad]=useState(false)
 
     const handleRegister=()=>{
-        
+        setLoad(true)
         const data={
             Name:name,
             Password:password,
@@ -29,29 +30,31 @@ const Register = () => {
 
         axios.post(`https://localhost:44351/api/Users`,data)
         .then(result=>{
-            console.log(result.data)
             window.location.reload(true)
+            setLoad(false)
         })
       }
 
     return ( 
-        <div className="main-login-container">
+        <>
+        {loading ? <div>Creating new account...</div> :<div className="main-login-container">
         <div className="icons-container">
-            <b><FontAwesomeIcon icon={faPlaneDeparture}/> AirTicket</b>
-        </div>
-        <div className="email-pass">
+                <b><FontAwesomeIcon icon={faPlaneDeparture}/> AirTicket</b>
+            </div>
+            <div className="email-pass">
 
-                <input className="main-e" type="text" placeholder="Name" onChange={e=>setName(e.target.value)}/>
-                <input className="main-e" type="text" placeholder="Email" onChange={e=>setEmail(e.target.value)} />
-                <input className="main-e" type="password" placeholder="Password" onChange={e=>setPassword(e.target.value)}/>
-                <input className="main-e" type="password" placeholder="Confirm Password" onChange={e=>setConfirm(e.target.value)}/>
-                <input className="main-e" type="text" placeholder="Phone" onChange={e=>setPhone(e.target.value)}/>
+                    <input className="main-e" type="text" placeholder="Name" onChange={e=>setName(e.target.value)}/>
+                    <input className="main-e" type="text" placeholder="Email" onChange={e=>setEmail(e.target.value)} />
+                    <input className="main-e" type="password" placeholder="Password" onChange={e=>setPassword(e.target.value)}/>
+                    <input className="main-e" type="password" placeholder="Confirm Password" onChange={e=>setConfirm(e.target.value)}/>
+                    <input className="main-e" type="text" placeholder="Phone" onChange={e=>setPhone(e.target.value)}/>
 
-        </div>
-        <div className="login-but">
-            <button className="l-button" onClick={()=>handleRegister()}>Register</button>
-        </div>
-    </div>
+            </div>
+            <div className="login-but">
+                <button className="l-button" onClick={()=>handleRegister()}>Register</button>
+            </div>
+        </div>}
+    </>
      );
 }
  

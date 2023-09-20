@@ -4,9 +4,10 @@ import { faPlaneDeparture, faTicket, faUser } from '@fortawesome/free-solid-svg-
 import axios from 'axios';
 import { useState } from 'react';
 import AllUsers from './AllUsers';
-import Tickets from './Tickets';
 import AdminTickets from './AdminTickets';
 import AdminFlights from './AdminFlights';
+import AddFlight from './AddFLight';
+import { useNavigate } from 'react-router-dom';
 
 const AdminPage = () => {
 
@@ -16,7 +17,14 @@ const AdminPage = () => {
     const [displayticket,setDisplayT]=useState(false);
     const [flight,setFlight]=useState([]);
     const [displayflight,setDisplayF]=useState(false);
+    const [displaya,setDisplayA]=useState(false);
+    const navigate=useNavigate();
 
+    const handleLogout=()=>{
+        localStorage.clear();
+        navigate('/mainpage')
+        window.location.reload(true);
+    }
 
     const handleUsers=()=>{
         axios.get("https://localhost:44351/api/Users")
@@ -24,7 +32,8 @@ const AdminPage = () => {
             setUser(result.data)
         })
         setDisplayT(false);
-        setDisplayF(false)
+        setDisplayF(false);
+        setDisplayA(false);
         setDisplayU(true);
         console.log('hi')
     }
@@ -35,7 +44,8 @@ const AdminPage = () => {
             setTicket(result.data)
         })
         setDisplayU(false);
-        setDisplayF(false)
+        setDisplayF(false);
+        setDisplayA(false);
         setDisplayT(true);
         console.log(ticket)
     }
@@ -46,10 +56,16 @@ const AdminPage = () => {
         })
         setDisplayU(false);
         setDisplayT(false);
+        setDisplayA(false);
         setDisplayF(true)
     }
 
-
+    const handleAdd=()=>{
+        setDisplayU(false);
+        setDisplayT(false);
+        setDisplayF(false);
+        setDisplayA(true)
+    }
 
     return ( 
         <div className="a-page">
@@ -58,13 +74,15 @@ const AdminPage = () => {
                 <b className="mytickets-b"><FontAwesomeIcon icon={faPlaneDeparture}/>AirTicket</b>
                 </div>
                 <div className="mytickets-buttons">
-                    <button className="mytickets-home">Logout</button>
+                    <button className="mytickets-home" onClick={()=>handleLogout()}>Logout</button>
                 </div>
             </div>
             <div className="a-buttons">
                 <button className='ad-buttons' onClick={()=>handleUsers()}><FontAwesomeIcon icon={faUser} />Users</button>
                 <button className='ad-buttons' onClick={()=>handleTickets()}><FontAwesomeIcon icon={faTicket} />Tickets</button>
                 <button className='ad-buttons' onClick={()=>handleFlights()}><FontAwesomeIcon icon={faPlaneDeparture} />Flights</button>
+                <button className='ad-buttons' onClick={()=>handleAdd()}><FontAwesomeIcon icon={faPlaneDeparture} />Add Flights</button>
+
             </div>
             <div className="a-content">
             {displayuser && user.map(user =>
@@ -78,6 +96,8 @@ const AdminPage = () => {
             {displayflight && flight.map(item =>
                         <AdminFlights item={item} key={item.flight_number}/>
                     )} 
+            
+            {displaya && <AddFlight/>}
             
             </div>
             

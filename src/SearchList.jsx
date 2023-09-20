@@ -12,6 +12,7 @@ const SearchList = ({item}) => {
         if(user){
             axios.get(`https://localhost:44351/api/Flights/${flight_number}`)
             .then(result=>{
+                console.log(result)
                 localStorage.setItem('flight',JSON.stringify(result.data));
                 navigate('/ticketdetails')
             })
