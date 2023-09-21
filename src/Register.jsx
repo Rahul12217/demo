@@ -28,13 +28,13 @@ const Register = () => {
             Phone:phone
         }
 
-        axios.post(`https://localhost:44351/api/Users`,data)
-        .then(result=>{
-            window.location.reload(true)
-            setLoad(false)
-        })
-      }
-
+    //     if(name.length!=0 && password == confirm && email.includes('@') && email.includes('.com') && )
+    axios.post(`https://localhost:44351/api/Users`,data)
+    .then(result=>{
+        window.location.reload(true)
+        setLoad(false)
+    })
+    }
     return ( 
         <>
         {loading ? <div>Creating new account...</div> :<div className="main-login-container">

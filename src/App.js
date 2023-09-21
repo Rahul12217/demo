@@ -9,6 +9,7 @@ import TicketDetails from "./TicketDetails";
 import AdminPage from "./AdminPage";
 import AllUsers from "./AllUsers";
 import AddFlight from "./AddFLight";
+import Print from "./Print";
 
 function App() {
 
@@ -27,6 +28,8 @@ function App() {
       <Route exact path='/admin' element={<AdminPage/>}></Route>
       <Route exact path='/users' element={<AllUsers/>}></Route>
       <Route exact path='/add' element={<AddFlight/>}></Route>
+      <Route exact path='/print' element={<Print/>}></Route>
+
     </Routes>
     </>
   );

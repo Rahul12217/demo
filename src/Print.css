@@ -1,0 +1,197 @@
+.full{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.print-page{
+    border: 1px solid black;
+    height:  1023px;
+    width: 794px;
+    /* background-color: red; */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.print-logo{
+    color: #0062e3;
+}
+
+
+.print-container{
+    height:  1023px;
+    width: 794px;
+
+    /* border: 1px solid black; */
+}
+
+.print-header{
+    margin-top: 30px;
+    /* background-color: aqua; */
+    display: flex;
+    width: 720px;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(130, 123, 123);
+}
+
+.e-tic{
+    margin-bottom: 20px;
+}
+
+.td-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.t-head-logo{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.th-bar .bar{
+    height: 40px;
+    width: 140px;
+    /* background-color: red; */
+}
+
+
+.t-d-2{
+    margin-top: 30px;
+    display: flex;
+    border-bottom: 2px solid lightgray;
+}
+
+.t-details{
+    padding: 5px;
+    width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: aqua; */
+    margin-top: 20px;
+    border: 1px solid rgb(122, 118, 118);
+    border-radius: 5px;
+}
+
+.t-first-part{
+    /* background-color: red; */
+    /* height: 100%; */
+    width: 100%;
+    max-width: 620px;
+    display: flex;
+    align-items: center;
+    gap: 120px;
+    margin-bottom: 10px;
+    /* justify-content: space-between; */
+}
+
+.t-first-part b{
+    margin-left: 20px;
+    margin-right: auto;
+}
+
+.t-second-part{
+    /* background-color: blanchedalmond; */
+    display: flex;
+    width: 100%;
+    max-width: 300px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.t-first-part .dtime{
+    margin-bottom: 10px;
+    margin-left: 0;
+    font-size: 24px;
+}
+.t-first-part .place{
+    margin-left: 20px;
+    /* margin-left: 0; */
+    font-size: 16px;
+}
+
+
+
+
+
+.t-arrow{
+    /* background-color: aqua; */
+    width: 50px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.t-airline-date{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.p-dets{
+    width: 600px;
+    margin-left: 20px;
+    margin-right: auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pp-name{
+    padding-bottom: 10px;
+    color: rgb(166, 163, 163);
+}
+
+.pp-age{
+    padding-bottom: 10px;
+    color: rgb(166, 163, 163);
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    gap: 10px;
+}
+
+.baggage-info{
+    padding: 30px;
+
+}
+
+.bag-table{
+    margin-top: 10px;
+    /* border: 1px solid black; */
+}
+
+.bag-table td{
+    text-align: left;
+    align-items: center;
+    width: 500px;
+}
+
+.footer{
+    margin-top: 102px;
+    background-color: #0062e3;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.print-button{
+    background-color: #05203c;
+    color: white;
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+}

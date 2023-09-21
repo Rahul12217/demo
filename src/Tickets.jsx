@@ -2,12 +2,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Tickets.css'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
 const Tickets = ({item}) => {
 
+    const navigate=useNavigate();
+
+    const handleDownload=()=>{
+        localStorage.setItem('print',JSON.stringify(item))
+    }
+
     const handleCancel=(id)=>{
         axios.delete(`https://localhost:44351/api/Ticket/${id}`)
+        window.location.reload();
     }
 
     return (  
@@ -32,7 +40,7 @@ const Tickets = ({item}) => {
             </div>
 
             <div className="third-part">
-                <button className="book-button">Download</button>
+                <button className="book-button" onClick={()=>{window.open('http://localhost:3000/print','_blank');handleDownload()}}>Download</button>
                 <button className="book-button" onClick={()=>handleCancel(item.ticketId)}>Cancel</button>
             </div>
 

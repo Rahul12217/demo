@@ -15,10 +15,10 @@ const Dropdown = () => {
     return (
 
         <div className="drop-container">
-            <div className="drop-button">
+            {/* <div className="drop-button">
                 <FontAwesomeIcon icon={faUser}/>
                 <button className="drop-button">Profile</button>
-            </div>
+            </div> */}
             
                 <div className="drop-button">
                 <FontAwesomeIcon icon={faTicket}/>
