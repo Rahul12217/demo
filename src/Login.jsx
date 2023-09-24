@@ -62,6 +62,7 @@ const Login = () => {
                 //setData(result.data)
                 //alert(result.data.userId)
                 //mainpage();
+                navigate('/mainpage')
             }
     
         }
