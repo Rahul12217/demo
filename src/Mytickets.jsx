@@ -12,11 +12,16 @@ const Mytickets = () => {
     const user=JSON.parse(localStorage.getItem('user'));
     const [data,setData]=useState([]);
     const navigate=useNavigate();
+    const [t,setT]=useState(false);
 
     useEffect(()=>{
         axios.get(`https://localhost:44351/api/Ticket/${user.userId}`)
         .then(result=>{
             setData(result.data.reverse())
+        })
+        .catch(error=>{
+            setT(true)
+            console.log(error)
         })
         console.log(data) 
     },[])
@@ -32,12 +37,14 @@ const Mytickets = () => {
                     <button className="mytickets-home" onClick={()=>navigate("/mainpage")}>Home</button>
                     <button className="mytickets-home">{user.name}</button>
                 </div>
-            </div>    
+            </div>   
+            {t ? <div className="no-tic"><h3>No tickets booked yet ☹</h3></div> :
             <div className="tickets">
                  {data.map(item =>
                     <Tickets item={item} key={item.ticketId}/>
                  )}     
             </div>        
+}
         </div>
     );
 }

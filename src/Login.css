@@ -41,12 +41,24 @@
     height: 50px;
     width: 350px;
     outline: none;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    /* margin-bottom: 20px; */
     border-radius: 10px;
     background-color: rgb(245, 243, 243);
     box-shadow: 0 1px 5px 0 rgba(37,32,31,.3);
 
+}
+
+.main-p{
+    text-align: center;
+    height: 50px;
+    width: 370px;
+    outline: none;
+    margin-top: 20px;
+    /* margin-bottom: 20px; */
+    border-radius: 10px;
+    background-color: rgb(245, 243, 243);
+    box-shadow: 0 1px 5px 0 rgba(37,32,31,.3);
 }
 
 .login-but{
@@ -85,4 +97,10 @@
 
 .new a{
     text-decoration: none;
+}
+
+.err{
+    padding: 0;
+    margin: 0;
+    margin:collapse;
 }

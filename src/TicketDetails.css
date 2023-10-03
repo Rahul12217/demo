@@ -206,3 +206,12 @@ select.gender{
     margin-right: auto;
     margin-bottom: 0px;
 }
+
+
+.loading-book{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 300px;
+    /* background-color: #0062e3; */
+}

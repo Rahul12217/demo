@@ -10,6 +10,7 @@ const Dropdown = () => {
     const handleLogout=()=>{
         localStorage.clear();
         window.location.reload(true);
+        Navigate('/mainpage')
     }
 
     return (

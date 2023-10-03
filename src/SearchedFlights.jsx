@@ -7,6 +7,7 @@ import SearchList from './SearchList';
 import { useNavigate } from 'react-router-dom';
 import Popup from 'reactjs-popup';
 import Dropdown from './Dropdown';
+import Register from './Register';
 
 const SearchedFlight = () => {
 
@@ -26,6 +27,10 @@ const SearchedFlight = () => {
           localStorage.setItem("user",JSON.stringify(result.data))
           Navigate('/search')
         })
+        .catch(error=>
+            {
+                console.log(error)
+            })
       }
 
   const userdata=JSON.parse(localStorage.getItem("user"))
@@ -62,9 +67,17 @@ const SearchedFlight = () => {
                 }
               </Popup>
             </div>:
-                    <div>
+                    <div className='sh-buttons'>
                         {/* <FontAwesomeIcon icon={faUser} /> */}
-                        <button className="sh-login">Register</button>
+                        <Popup trigger=
+                            {<button className="sh-login">Register</button>}
+                            modal nested>
+                            {
+                                close => (
+                                <Register/>    
+                                )
+                            }
+                    </Popup>
                         <Popup trigger=
                     {<button className="sh-login">Login</button>}
                     modal nested>
