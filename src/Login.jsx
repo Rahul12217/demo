@@ -90,7 +90,7 @@ const Login = () => {
         {msg && <p style={{color : 'red' }}> Invalid Email or Password  </p>}
         <div className="login-but">
             <div className="new">
-                <a href="/register"> Create Account</a>
+                <a href="/forgot"> Forgot password? </a>
             </div>
             <button className="l-button" onClick={()=>handleLogin()}>Login</button>
         </div>

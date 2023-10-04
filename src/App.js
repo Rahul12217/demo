@@ -10,6 +10,7 @@ import AdminPage from "./AdminPage";
 import AllUsers from "./AllUsers";
 import AddFlight from "./AddFLight";
 import Print from "./Print";
+import ForgotPassword from "./forgot";
 
 function App() {
 
@@ -29,7 +30,7 @@ function App() {
       {user ?<Route exact path='/users' element={<AllUsers/>}></Route>: <>Login to continue</>}
       {user ?<Route exact path='/add' element={<AddFlight/>}></Route> : <>Login to continue</>}
       {user ?<Route exact path='/print' element={<Print/>}></Route>: <>Login to continue</>}
-
+      <Route exact path="/forgot" element={<ForgotPassword/>} />
     </Routes>
     </>
   );

@@ -31,10 +31,12 @@ const Register = () => {
             }
             axios.post(`https://localhost:44351/api/Users`,data)
             .then(result=>{
-                window.location.reload(true)
+                // window.location.reload(true)
                 setLoad(false)
             })
             .catch(error =>{
+                setLoad(false)
+                setError("Email already exists")
                 console.log(error)
             })
     }
