@@ -4,6 +4,7 @@ import {
   faBars,
   faBed,
   faCab,
+  faCalendar,
   faEarth,
   faGlobe,
   faLocation,
@@ -21,7 +22,7 @@ import goa from "./Images/Goa.jpg";
 import chennai from "./Images/chennai.jpg";
 import jaipur from "./Images/jaipur.jpg";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Popup from 'reactjs-popup';
 import { faLine } from "@fortawesome/free-brands-svg-icons";
 import Dropdown from "./Dropdown";
@@ -35,10 +36,33 @@ const Mainpage = () => {
   const [from, setFrom] = useState("");
   const [to,setTo]=useState("");
   const [date,setDate]=useState('');
+  const [startDate, setStartDate] = useState(new Date());
   const Navigate = useNavigate();
+  const [dd,setdd]=useState(false);
+  const [dd2,setdd2]=useState(false);
 
   const userdata=JSON.parse(localStorage.getItem("user"))
   // console.log(userdata.name)
+
+  const data=["vizag","hyderabad","chennai","banglore","mumbai","pune","delhi"];
+
+  const [fd,setfd]=useState([]);
+
+  const filter1=(e)=>{
+    setFrom(e.target.value)
+    setfd(data.filter(x=>x.toLowerCase().includes(e.target.value)));
+  }
+  const filter2=(e)=>{
+    setTo(e.target.value)
+    setfd(data.filter(x=>x.toLowerCase().includes(e.target.value)));
+  }
+  // console.log(to)
+  useEffect(()=>{
+    setDate(
+      `${startDate.getFullYear()}-${parseInt(startDate.getMonth()+1)}-${startDate.getDate()}`
+    )  
+  },[startDate])
+
 
   const handleSearch = (from,to,date) => {
     const data={
@@ -48,6 +72,9 @@ const Mainpage = () => {
         localStorage.setItem("search",JSON.stringify(data))
         Navigate('/search')
   };
+
+  // console.log(date)
+
   return (
     <div className="page">
       <div className="header">
@@ -101,23 +128,23 @@ const Mainpage = () => {
           <div className="search-items">
             <div className="search-input"> 
               <FontAwesomeIcon icon={faLocationDot} />
-              <input className="searchFrom" type="text" placeholder="From" onChange={e=>setFrom(e.target.value)}/>
+              <input className="searchFrom" type="text" placeholder="From" value={from} onClick={()=>setdd(true)} onChange={filter1}/>
             </div>
             <div className="search-input">
               <FontAwesomeIcon icon={faLocationDot} />
-              <input className="searchFrom" type="text" placeholder="To" onChange={e=>setTo(e.target.value)} />
+              <input className="searchFrom" type="text" placeholder="To" value={to} onClick={()=>setdd2(true)} onChange={filter2} />
             </div>
             <div className="search-input">
-              <input type="date"
-                className="searchFrom"
-                // showIcon
-                placeholder="Departure Date"
-                dateformat="yyyy-MM-dd"
-                onChange={e=>setDate(e.target.value)}
-                // selected={date}
-                // onSelect={(d)=>setDate(d)}
-                // minDate={new Date()}
-              />
+              <FontAwesomeIcon icon={faCalendar}/>
+            <DatePicker
+              // showIcon
+              placeholderText="Departure date"
+              dateFromat='YYYY-MM-dd'
+              selected={startDate}
+              onChange={(date) => setStartDate(date)}
+              
+              
+            />
             </div>
           </div>
           <div className="search-class">
@@ -128,6 +155,14 @@ const Mainpage = () => {
           </div>
         </div>
       </div>
+      {dd && from && <div className="from-dropdown">{fd.map(a=>{
+                  return from && <p className="from-list" onClick={()=>{setFrom(a);setdd(false)}} style={{cursor:"pointer"}}>{a}</p>
+                })}
+              </div>}
+      {dd2 && to && <div className="to-dropdown">{fd.map(a=>{
+                  return to && <p className="from-list" onClick={()=>{setTo(a);setdd2(false)}} style={{cursor:"pointer"}}>{a}</p>
+                })}
+              </div>}
 
       <div className="explore">
         <button className="explore-button">

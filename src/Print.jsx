@@ -9,8 +9,10 @@ const Print = () => {
 
     const print = JSON.parse(localStorage.getItem('print'))
     const componentRef=useRef();
-    const [dp,setDp]=useState(true)
-
+    const [dp,setDp]=useState(true);
+    const today = new Date();
+    const days=["Sunday",'Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+    console.log(today)
     const handlePrint= useReactToPrint({
         content: ()=> componentRef.current,
     });
@@ -24,7 +26,7 @@ const Print = () => {
                     <div className="e-tic">
                         <h3>E-Ticket</h3>
                         <p>Ticket Id : {print.ticketId}</p>
-                        <p>Booked on : 21 Sep 2023</p>
+                        <p>Booked on : {`${days[today.getDay()]},${today.getFullYear()}/${today.getMonth()+1}/${today.getDate()}`}</p>
                     </div>
                     <div className="print-logo">
                         <h2> <FontAwesomeIcon icon={faPlaneDeparture}/> AirTicket</h2>

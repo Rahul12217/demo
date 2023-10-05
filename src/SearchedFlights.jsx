@@ -42,6 +42,9 @@ const SearchedFlight = () => {
             setData(result.data);
             //console.log(result.data)
         })
+        .catch(error=>{
+            console.log(error)
+        })
     },[])
 
     //console.log(data)
@@ -50,9 +53,9 @@ const SearchedFlight = () => {
 
             <div className="search-header">
                 <div className="sh-items">
-                    <div className="sh-logo">
+                    <div className="sh-logo" onClick={()=>Navigate('/mainpage')} style={{cursor:'pointer'}}>
                             <FontAwesomeIcon icon={faPlaneDeparture} />
-                            <span>AirTicket</span>
+                            <span >AirTicket</span>
                         </div>
                     <div className="sh-buttons">
                         <FontAwesomeIcon icon={faUser} />
@@ -127,31 +130,3 @@ const SearchedFlight = () => {
  
 export default SearchedFlight
 
-
-
-
-
-
-
-
-
-
-
-            {/* <table className="search-results">
-                    <tbody>
-                    {data.map((item, index) => {
-                        return (
-                        <tr key={index}>
-                            <td>{(item.airline)}</td>
-                            <td>{item.flight_number}</td>
-                            <td>{item.from}</td>
-                            <td>{item.to}</td>
-                            <td>{item.departureDate.slice(0,10)}</td>
-                            <td>{item.departureTime}</td>
-                            <td>{item.arrivalTime}</td>
-                            <td>{item.fare}</td>
-                        </tr>
-                        );
-                    })}
-                    </tbody>
-                </table> */}
