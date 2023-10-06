@@ -46,6 +46,13 @@ const Mainpage = () => {
 
   const data=["vizag","hyderabad","chennai","banglore","mumbai","pune","delhi"];
 
+  // useEffect(()=>{   
+  //   axios.get("https://localhost:44351/api/Flights")
+  //   .then(result=>{
+  //     setData(result.data);
+  //   })
+  // },[])
+
   const [fd,setfd]=useState([]);
 
   const filter1=(e)=>{
@@ -128,11 +135,11 @@ const Mainpage = () => {
           <div className="search-items">
             <div className="search-input"> 
               <FontAwesomeIcon icon={faLocationDot} />
-              <input className="searchFrom" type="text" placeholder="From" value={from} onClick={()=>setdd(true)} onChange={filter1}/>
+              <input className="searchFrom" type="text" placeholder="From" value={from} onClick={()=>{setdd(true);setdd2(false)}} onChange={filter1}/>
             </div>
             <div className="search-input">
               <FontAwesomeIcon icon={faLocationDot} />
-              <input className="searchFrom" type="text" placeholder="To" value={to} onClick={()=>setdd2(true)} onChange={filter2} />
+              <input className="searchFrom" type="text" placeholder="To" value={to} onClick={()=>{setdd2(true);setdd(false)}} onChange={filter2} />
             </div>
             <div className="search-input">
               <FontAwesomeIcon icon={faCalendar}/>
