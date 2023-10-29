@@ -26,7 +26,7 @@ function App() {
       {user ?<Route exact path="/drop" element={<Dropdown/>}></Route>: <>Login to continue</>}
       {user ?<Route exact path='/mytickets' element={<Mytickets/>}></Route>: <>Login to continue</>}
       {user ?<Route exact path='/ticketdetails' element={<TicketDetails/>}></Route>: <>Login to continue</>}
-      {user ?<Route exact path='/admin' element={<AdminPage/>}></Route>: <>Login to continue</>}
+      <Route exact path='/admin' element={<AdminPage/>}></Route>: <>Login to continue</>
       {user ?<Route exact path='/users' element={<AllUsers/>}></Route>: <>Login to continue</>}
       {user ?<Route exact path='/add' element={<AddFlight/>}></Route> : <>Login to continue</>}
       {user ?<Route exact path='/print' element={<Print/>}></Route>: <>Login to continue</>}
