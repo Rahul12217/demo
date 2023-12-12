@@ -33,14 +33,12 @@ const ForgotPassword = () => {
             axios.put(`https://localhost:44351/api/Users/${otp},${email},${np}`)
             .then(result=>{
                 setError('');
-                toast('password changed successfully',{
-                    position: toast.success.POSITION.TOP_CENTER
-                })    
+                toast('password changed successfully')    
                 setTimeout(()=>navigate('/mainpage'),3000)
             })
             .catch(error=>{
                 console.log(error)
-                setError('Incorrect otp')
+                //setError('Incorrect otp')
             })
 
         }

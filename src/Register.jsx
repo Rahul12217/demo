@@ -20,6 +20,8 @@ const Register = () => {
     const [loading,setLoad]=useState(false);
     const [error,setError]=useState('');
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
     const handleRegister= async ()=>{
         if(name.length!=0 && password == confirm && email.includes('@') && email.includes('.com') && password.length>=8){
             setLoad(true)
@@ -64,11 +66,19 @@ const Register = () => {
             </div>
             <div className="email-pass">
 
-                    <input className="main-e" type="text" placeholder="Name" onChange={e=>setName(e.target.value)}/>
-                    <input className="main-e" type="text" placeholder="Email" onChange={e=>setEmail(e.target.value)} />
+            <input className="main-e" type="text" placeholder="Name" onChange={e => setName(e.target.value)} />
+                        {name.length === 0 && <p className="err" style={{ color: 'red' }}>Enter the name</p>}
+                        
+                        <input className={`main-e ${error && !emailRegex.test(email) ? 'error' : ''}`} type="text" placeholder="Email" onChange={e => setEmail(e.target.value)} />
+                        {!emailRegex.test(email) && <p className="err" style={{ color: 'red' }}>Enter a valid email address</p>}
+                        
                     <input className="main-p" type="password" placeholder="Password" onChange={e=>setPassword(e.target.value)}/>
+                    {password.length <= 8  && <p className="err" style={{ color: 'red' }}> Password should be 8 characters </p>}
+
                     <input className="main-p" type="password" placeholder="Confirm Password" onChange={e=>setConfirm(e.target.value)}/>
+
                     <input className="main-e" type="text" placeholder="Phone" onChange={e=>setPhone(e.target.value)}/>
+                    {phone.length === 0 && <p className="err" style={{ color: 'red' }}>Enter the phone number</p>}
 
             </div>
 

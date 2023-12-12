@@ -8,22 +8,36 @@ import { useNavigate } from 'react-router-dom';
 import Popup from 'reactjs-popup';
 import Dropdown from './Dropdown';
 import Register from './Register';
+import {search} from './Redux/Search';
+import {login} from './Redux/user'
+import { useDispatch, useSelector } from 'react-redux';
+
+
 
 const SearchedFlight = () => {
 
     const [data,setData]=useState([]);
+
+    const dispatch = useDispatch();
+    
+   //const user = useSelector((state)=> state.user.value)
+
+//    const search = useSelector((state)=> state.search.value)
+const user=JSON.parse(localStorage.getItem('user'));
+
+
     const search=JSON.parse(localStorage.getItem('search'));
-    const from=search.from;
-    const to=search.to;
-    const date = search.date;
     const Navigate = useNavigate();
     const [email,setEmail]=useState('');
     const [password,setPassword]=useState('');
     const navigate=useNavigate();
 
+    console.log(search)
+
     const handleLogin=()=>{
         axios.get(`https://localhost:44351/api/Users/${email},${password}`)
         .then(result=>{
+         dispatch(login({name: result.data.name,password:  result.data.password,email:  result.data.email,phone:  result.data.phone,userId:  result.data.userId}))
           localStorage.setItem("user",JSON.stringify(result.data))
           Navigate('/search')
         })
@@ -36,8 +50,9 @@ const SearchedFlight = () => {
   const userdata=JSON.parse(localStorage.getItem("user"))
 
 
+
     useEffect(()=>{
-        axios.get(`https://localhost:44351/api/Flights/${from}/${to}/${date}`)
+        axios.get(`https://localhost:44351/api/Flights/${search.from}/${search.to}/${search.date}`)
         .then(result=>{
             setData(result.data);
             //console.log(result.data)
@@ -59,9 +74,9 @@ const SearchedFlight = () => {
                         </div>
                     <div className="sh-buttons">
                         <FontAwesomeIcon icon={faUser} />
-                            {userdata ?<div className="account-popup">
+                            {user ?<div className="account-popup">
               <Popup className="account-popup" trigger=
-                {<button className="account-button">{userdata.name}</button>}
+                {<button className="account-button">{user.name}</button>}
                 >
                 {
                     account => (
@@ -114,8 +129,8 @@ const SearchedFlight = () => {
 
             <div className="header2">
                 <div className="search-icon" onClick={()=>navigate('/mainpage')}><FontAwesomeIcon icon={faMagnifyingGlass}/></div>
-                <p><b>  {from} - {to}</b></p>    
-                <p>{(date)}</p>          
+                <p><b>  {search.from} - {search.to}</b></p>    
+                <p>{(search.date)}</p>          
             </div>
 
             <div className="results-container">

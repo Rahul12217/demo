@@ -8,6 +8,9 @@ import { useNavigate } from 'react-router-dom';
 const Tickets = ({item}) => {
 
     const navigate=useNavigate();
+    const user=JSON.parse(localStorage.getItem('user'));
+    const token=localStorage.getItem('token');
+
 
     const handleDownload=()=>{
         localStorage.setItem('print',JSON.stringify(item))
@@ -15,7 +18,6 @@ const Tickets = ({item}) => {
 
     const handleCancel=(id)=>{
         axios.delete(`https://localhost:44351/api/Ticket/${id}`)
-        window.location.reload();
     }
 
     return (  

@@ -20,6 +20,8 @@ const AdminPage = () => {
     const [displaya,setDisplayA]=useState(false);
     const navigate=useNavigate();
 
+    const token = localStorage.getItem("token")
+
     const handleLogout=()=>{
         localStorage.clear();
         navigate('/mainpage')
@@ -39,7 +41,7 @@ const AdminPage = () => {
     }
 
     const handleTickets=()=>{
-        axios.get("https://localhost:44351/api/Ticket")
+        axios.get("https://localhost:44351/api/Ticket",{ headers: {"Authorization" : `Bearer ${token}`} })
         .then(result=>{
             setTicket(result.data)
         })

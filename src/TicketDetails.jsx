@@ -4,9 +4,14 @@ import { useNavigate } from "react-router-dom";
 import './TicketDetails.css'
 import { useState } from "react";
 import axios from "axios";
+import { useSelector } from "react-redux";
 
 const TicketDetails = () => {
+
+    //const user = useSelector((state) => state.user.value)
     
+    const user = JSON.parse(localStorage.getItem('user'));
+
     const [name,setName]=useState('');
     const [phone,setPhone]=useState('');
     const  [email,setEMail]=useState('');
@@ -55,7 +60,7 @@ const TicketDetails = () => {
         })
     }
 
-    const user=JSON.parse(localStorage.getItem('user'));
+    // const user=JSON.parse(localStorage.getItem('user'));
     const navigate=useNavigate();
     const fare=JSON.parse(localStorage.getItem('flight'))
 

@@ -3,10 +3,14 @@ import './SearchList.css'
 import { faArrowAltCircleDown, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 const SearchList = ({item}) => {
 
     const user = JSON.parse(localStorage.getItem('user'));
+
+    //const user = useSelector((state)=> state.user.value);
+
     const navigate=useNavigate();
     const handleBook=(flight_number)=>{
         if(user){

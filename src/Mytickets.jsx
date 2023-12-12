@@ -6,15 +6,22 @@ import { useEffect, useState } from "react";
 import tickets from "./Tickets";
 import Tickets from "./Tickets";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Mytickets = () => {
+
+    //const user = useSelector((state)=>state.user.value)
 
     const user=JSON.parse(localStorage.getItem('user'));
     const [data,setData]=useState([]);
     const navigate=useNavigate();
     const [t,setT]=useState(false);
+    const token=localStorage.getItem('token');
+
+
 
     useEffect(()=>{
+        // axios.get(`https://localhost:44351/api/Ticket/${user.userId}`,{ headers: {"Authorization" : `Bearer ${token}`} })
         axios.get(`https://localhost:44351/api/Ticket/${user.userId}`)
         .then(result=>{
             setData(result.data.reverse())
@@ -24,7 +31,7 @@ const Mytickets = () => {
             console.log(error)
         })
         console.log(data) 
-    },[])
+    },[data])
 
     return (  
         <div className="mytickets-container">
@@ -38,10 +45,10 @@ const Mytickets = () => {
                     <button className="mytickets-home">{user.name}</button>
                 </div>
             </div>   
-            {t ? <div className="no-tic"><h3>No tickets booked yet ☹</h3></div> :
+            {t ? <div className="no-tic"><h3>No tickets booked yet ☹ </h3></div> :
             <div className="tickets">
                  {data.map(item =>
-                    <Tickets item={item} key={item.ticketId}/>
+                    <Tickets item={item} key={item.ticketId} data={data}/>
                  )}     
             </div>        
 }

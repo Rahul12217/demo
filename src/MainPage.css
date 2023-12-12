@@ -351,7 +351,7 @@ button{
     position:absolute;
     width: 200px;
     padding: 10px;
-    margin-left: 180px;
+    margin-left: 120px;
     margin-top: -40px;
     display: flex;
     border-radius: 5px;
@@ -363,7 +363,7 @@ button{
     position:absolute;
     width: 200px;
     padding: 10px;
-    margin-left: 420px;
+    margin-left: 355px;
     margin-top: -40px;
     display: flex;
     border-radius: 5px;
