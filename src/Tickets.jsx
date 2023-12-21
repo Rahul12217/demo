@@ -3,6 +3,11 @@ import './Tickets.css'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import airIndia from './Images/airIndia.jpg'
+import airAsia from './Images/airasia.jpg'
+import indigo from './Images/indigo.jpg'
+import spicejet from './Images/spicejet.jpg'
+import vistara from './Images/vistara.jpg'
 
 
 const Tickets = ({item}) => {
@@ -24,6 +29,7 @@ const Tickets = ({item}) => {
          <div className="list-container">
             <div className="first-part">
                 <div className="airline-date">
+
                 <b>{item.airline}</b>
                 <b>{item.departureDate.slice(0,10)}</b>
                 </div>

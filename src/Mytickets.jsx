@@ -7,6 +7,15 @@ import tickets from "./Tickets";
 import Tickets from "./Tickets";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import airIndia from './Images/airIndia.jpg'
+import airAsia from './Images/airasia.jpg'
+import indigo from './Images/indigo.jpg'
+import spicejet from './Images/spicejet.jpg'
+import vistara from './Images/vistara.jpg'
+
+
+
+
 
 const Mytickets = () => {
 

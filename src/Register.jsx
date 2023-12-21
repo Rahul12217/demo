@@ -73,7 +73,7 @@ const Register = () => {
                         {!emailRegex.test(email) && <p className="err" style={{ color: 'red' }}>Enter a valid email address</p>}
                         
                     <input className="main-p" type="password" placeholder="Password" onChange={e=>setPassword(e.target.value)}/>
-                    {password.length <= 8  && <p className="err" style={{ color: 'red' }}> Password should be 8 characters </p>}
+                    {password.length < 8  && <p className="err" style={{ color: 'red' }}> Password should be 8 characters </p>}
 
                     <input className="main-p" type="password" placeholder="Confirm Password" onChange={e=>setConfirm(e.target.value)}/>
 
