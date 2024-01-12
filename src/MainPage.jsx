@@ -47,7 +47,7 @@ const Mainpage = () => {
   const userdata = JSON.parse(localStorage.getItem("user"))
   // console.log(userdata.name)
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   //const userdata = useSelector((state) => state.user.value);
    
@@ -81,7 +81,7 @@ const Mainpage = () => {
       'from': from, 'to': to, 'date': date
     }
     
-    dispatch(search({from : from ,to : to,date : date}))
+    // dispatch(search({from : from ,to : to,date : date}))
 
 
     // console.log(data)
