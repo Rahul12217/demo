@@ -4,7 +4,7 @@ import { faArrowAltCircleDown, faArrowRight } from '@fortawesome/free-solid-svg-
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import airIndia from './Images/airIndia.jpg'
+import airIndia from './Images/airindia.jpg'
 import airAsia from './Images/airasia.jpg'
 import indigo from './Images/indigo.jpg'
 import spicejet from './Images/spicejet.jpg'

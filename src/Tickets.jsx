@@ -3,7 +3,7 @@ import './Tickets.css'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import airIndia from './Images/airIndia.jpg'
+import airIndia from './Images/airindia.jpg'
 import airAsia from './Images/airasia.jpg'
 import indigo from './Images/indigo.jpg'
 import spicejet from './Images/spicejet.jpg'
