@@ -7,6 +7,6 @@ test('search button', () => {
     render(<BrowserRouter>
         <Mainpage />
     </BrowserRouter>);
-
+    
     expect(screen.getByRole('button',{name : /search/i})).toBeInTheDocument();
 })
