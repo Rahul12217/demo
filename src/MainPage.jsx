@@ -30,7 +30,7 @@ import Login from "./Login";
 import Register from "./Register";
 import { useDispatch, useSelector } from "react-redux";
 // import 'reactjs-popup/dist/index.css';
-import { search } from "./Redux/Search"
+import {searchActions} from "./Redux/Search"
 
 
 
@@ -44,12 +44,12 @@ const Mainpage = () => {
   const [dd, setdd] = useState(false);
   const [dd2, setdd2] = useState(false);
 
-  const userdata = JSON.parse(localStorage.getItem("user"))
+  // const userdata = JSON.parse(localStorage.getItem("user"))
   // console.log(userdata.name)
 
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  //const userdata = useSelector((state) => state.user.value);
+  const userdata = useSelector((state) => state.user.value);
    
   //22-11-2023 
    //console.log(userdata)
@@ -81,7 +81,7 @@ const Mainpage = () => {
       'from': from, 'to': to, 'date': date
     }
     
-    // dispatch(search({from : from ,to : to,date : date}))
+    dispatch(searchActions.search({from : from ,to : to,date : date}))
 
 
     // console.log(data)

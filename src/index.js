@@ -4,17 +4,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import {configureStore} from '@reduxjs/toolkit';
-import userReducer from "./Redux/user";
-import searchReducer from "./Redux/Search";
-
-
-const store = configureStore({
-  reducer : {
-    user : userReducer,
-    search: searchReducer,
-  },
-  });
+import {store} from './Redux/index'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
