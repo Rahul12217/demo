@@ -1,27 +1,17 @@
 import { render, screen } from "@testing-library/react"
 import Mainpage from "./MainPage"
 import { BrowserRouter } from 'react-router-dom';
-import { configureStore } from '@reduxjs/toolkit';
-import userReducer from "./Redux/user";
-import searchReducer from "./Redux/Search";
-import { Provider } from "react-redux";
 
-
-const store = configureStore({
-    reducer: {
-        user: userReducer,
-        search: searchReducer,
-    },
-});
+import Root from "./Root";
 
 test('search button', () => {
 
     render(
-        <Provider store={store}>
+        <Root>
             <BrowserRouter>
                 <Mainpage />
             </BrowserRouter>
-        </Provider>
+        </Root>
     );
 
     expect(screen.getByRole('button', { name: /search/i })).toBeInTheDocument();
