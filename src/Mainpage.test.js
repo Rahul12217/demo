@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react"
 import Mainpage from "./MainPage"
 import { BrowserRouter } from 'react-router-dom';
 
-import Root from "./Root";
+import Root from "./Root"; 
 
 test('search button', () => {
 
